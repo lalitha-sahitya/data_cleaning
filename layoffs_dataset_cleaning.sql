@@ -78,3 +78,23 @@ FROM layoffs_staging2;
 SELECT industry
 FROM layoffs_staging2
 ORDER BY 1;
+
+SELECT DISTINCT country
+FROM layoffs_staging2
+order by 1;
+
+UPDATE layoffs_staging2
+SET `date`=STR_TO_DATE(`date`,'%m/%d/%Y');
+
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN `date` DATE;
+
+SELECT *
+FROM layoffs_staging2
+WHERE company='Appsmith';
+
+UPDATE layoffs_staging2
+SET industry='Low code'
+WHERE industry='';
+
+
